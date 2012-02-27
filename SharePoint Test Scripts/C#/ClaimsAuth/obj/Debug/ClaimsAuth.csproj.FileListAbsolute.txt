@@ -1,0 +1,5 @@
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\ClaimsAuth\bin\Debug\ClaimsAuth.dll
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\ClaimsAuth\bin\Debug\ClaimsAuth.pdb
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\ClaimsAuth\obj\Debug\ClaimsAuth.csprojResolveAssemblyReference.cache
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\ClaimsAuth\obj\Debug\ClaimsAuth.dll
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\ClaimsAuth\obj\Debug\ClaimsAuth.pdb

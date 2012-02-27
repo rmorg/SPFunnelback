@@ -1,0 +1,8 @@
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\obj\x86\Release\Sp_Ctx.csprojResolveAssemblyReference.cache
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\bin\Release\Sp_Ctx.exe.config
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\bin\Release\Sp_Ctx.exe
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\bin\Release\Sp_Ctx.pdb
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\bin\Release\ClaimsAuth.dll
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\bin\Release\ClaimsAuth.pdb
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\obj\x86\Release\Sp_Ctx.exe
+C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\obj\x86\Release\Sp_Ctx.pdb
