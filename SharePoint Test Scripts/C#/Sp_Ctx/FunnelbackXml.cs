@@ -26,6 +26,7 @@ namespace Sp_Ctx
 		public string[] WantedFields { get; set; }
 		public string[] CDataFields { get; set; }
 		public string[] LookupFields { get; set; }
+		public string[] UserFields { get; set; }
 	}
 	
 	public class FunnelbackXmlRecord
@@ -45,6 +46,11 @@ namespace Sp_Ctx
 				if (this.myfbx.CDataFields.Contains(key))
 				{
 					oSafeValueString = @"<![CDATA[" + oSafeValueString + @"]]>";
+				}
+				if (this.myfbx.LookupFields.Contains(key))
+				{
+					FieldUserValue oFLV = (FieldUserValue)this.li.FieldValues[key];
+					oSafeValueString = oFLV.LookupValue;
 				}
 			}
 			return oSafeValueString;		
@@ -90,6 +96,7 @@ namespace Sp_Ctx
 			fbx.targetSite = @"http://funnelback.sharepoint.com/teamsite/";
 			fbx.WantedFields = new string[] {"WikiField", "FileRef", "FileDirRef", "FileLeafRef", "Created", "Modified"};
 			fbx.CDataFields =  new string[] {"WikiField"};
+			fbx.LookupFields = new string[] {"Author"};
 			
 			using (ClientContext ctx = ClaimClientContext.GetAuthenticatedContext(fbx.targetSite))
 			{
