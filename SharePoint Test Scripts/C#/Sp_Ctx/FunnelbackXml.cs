@@ -118,9 +118,10 @@ namespace Sp_Ctx
 							ctx.ExecuteQuery(); // Execute
 							
 							writer.WriteLine(@"<site>");
+							writer.WriteLine("<title>{0}</title>", oWebsite.Title);
 							foreach (List oList in collList)
 							{
-								writer.WriteLine("<title>{0}</title>", oList.Title);
+								writer.WriteLine("<list>{0}</list>", oList.Title);
 								List oListy = collList.GetByTitle(oList.Title);
 								CamlQuery camlQuery = new CamlQuery();
 								camlQuery.ViewXml = "<View><RowLimit>100</RowLimit></View>";
@@ -138,7 +139,6 @@ namespace Sp_Ctx
 									oFXR.li = oListItem;
 									oFXR.FunnelbackWriteXml();
 								}
-								
 							}
 							writer.WriteLine(@"</site>");
 						}
