@@ -23,12 +23,32 @@ namespace Sp_Ctx
 	{
 		public string outputFolder { get; set; }
 		public string targetSite { get; set; }
+		public string[] WantedFields { get; set; }
+		public string[] CDataFields { get; set; }
+		public string[] LookupFields { get; set; }
 	}
 	
 	public class FunnelbackXmlRecord
 	{
 		public FunnelbackXmlConfig myfbx { get; set; }
 		public ListItem li { get; set; }
+				
+		public string SafeFieldValue(string key)
+		{
+			string oSafeValueString = "None";
+			if (this.li.FieldValues.Keys.Contains(key))
+			{
+				if (this.myfbx.WantedFields.Contains(key))
+				{
+					oSafeValueString = this.li.FieldValues[key].ToString();
+				}
+				if (this.myfbx.CDataFields.Contains(key))
+				{
+					oSafeValueString = @"<![CDATA[" + oSafeValueString + @"]]>";
+				}
+			}
+			return oSafeValueString;		
+		}
 		
 		public void FunnelbackWriteXml()
 		{
@@ -48,7 +68,11 @@ namespace Sp_Ctx
 					List<string> klist = new List<string>(this.li.FieldValues.Keys);
 					foreach (String klistkey in klist)
 					{
-						writer.WriteLine("<{0}><!CDATA[{1}]]></{0}>", klistkey.Replace(" ", "_"), this.li.FieldValues[klistkey]);
+						string oSFV = SafeFieldValue(klistkey);
+						if (oSFV != "None")
+						{
+							writer.WriteLine("<{0}>{1}</{0}>", klistkey.Replace(" ", "_"), oSFV);							
+						}
 					}
 					writer.WriteLine(@"</FBSPRecord>");
 				}				
@@ -64,6 +88,8 @@ namespace Sp_Ctx
 			FunnelbackXmlConfig fbx = new FunnelbackXmlConfig();
 			fbx.outputFolder = @"C:\Users\rpfmorg\output";
 			fbx.targetSite = @"http://funnelback.sharepoint.com/teamsite/";
+			fbx.WantedFields = new string[] {"WikiField", "FileRef", "FileDirRef", "FileLeafRef", "Created", "Modified"};
+			fbx.CDataFields =  new string[] {"WikiField"};
 			
 			using (ClientContext ctx = ClaimClientContext.GetAuthenticatedContext(fbx.targetSite))
 			{
