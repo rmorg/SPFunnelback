@@ -60,7 +60,7 @@ namespace Sp_Ctx
 		{
 			if (this.li != null)
 			{
-				using (StreamWriter writer = new StreamWriter(this.myfbx.outputFolder + @"\" + this.li.Id.ToString() + ".xml"))
+				using (StreamWriter writer = new StreamWriter(this.myfbx.outputFolder + @"\" + this.li["UniqueId"].ToString() + ".xml"))
 				{
 					writer.WriteLine(@"<?xml version='1.0'?>");
 					writer.WriteLine(@"<FBSPRecord>");
@@ -104,34 +104,44 @@ namespace Sp_Ctx
 				{
 					using (StreamWriter writer = new StreamWriter(fbx.outputFolder + "\\first.xml"))
 					{
-						Web oWebsite = ctx.Web;
-						ListCollection collList = oWebsite.Lists;
-						ctx.Load(collList); // Query for Web
-						ctx.ExecuteQuery(); // Execute
+						Site oSite = ctx.Site;
+						WebCollection oWebs = oSite.RootWeb.Webs;
+						ctx.Load(oWebs);
+						ctx.ExecuteQuery();
 						writer.WriteLine(@"<?xml version='1.0'?>");
 						writer.WriteLine(@"<sharepoint>");
-						foreach (SP.List oList in collList)
+						foreach(Web oWebsite in oWebs)
 						{
-							writer.WriteLine("<title>{0}</title>", oList.Title);
-							SP.List oListy = ctx.Web.Lists.GetByTitle(oList.Title);
-							CamlQuery camlQuery = new CamlQuery();
-                    		camlQuery.ViewXml = "<View><RowLimit>100</RowLimit></View>";
-                    		ListItemCollection collListItem = oListy.GetItems(camlQuery);
-                    		ctx.Load(collListItem,
-                             	items => items.IncludeWithDefaultProperties(
-                             		item => item.DisplayName,
-                             		item => item.HasUniqueRoleAssignments
-                             	));
-                    		ctx.ExecuteQuery();
-                    		foreach (ListItem oListItem in collListItem)
-                    		{
-                    			FunnelbackXmlRecord oFXR = new FunnelbackXmlRecord();
-                    			oFXR.myfbx = fbx;
-                    			oFXR.li = oListItem;
-                    			oFXR.FunnelbackWriteXml();
-                    		}
-                  		
-                    }
+										
+							ListCollection collList = oWebsite.Lists;
+							ctx.Load(collList); // Query for Web
+							ctx.ExecuteQuery(); // Execute
+							
+							writer.WriteLine(@"<site>");
+							foreach (List oList in collList)
+							{
+								writer.WriteLine("<title>{0}</title>", oList.Title);
+								List oListy = collList.GetByTitle(oList.Title);
+								CamlQuery camlQuery = new CamlQuery();
+								camlQuery.ViewXml = "<View><RowLimit>100</RowLimit></View>";
+								ListItemCollection collListItem = oListy.GetItems(camlQuery);
+								ctx.Load(collListItem,
+								         items => items.IncludeWithDefaultProperties(
+								         	item => item.DisplayName,
+								         	item => item.HasUniqueRoleAssignments
+								         ));
+								ctx.ExecuteQuery();
+								foreach (ListItem oListItem in collListItem)
+								{
+									FunnelbackXmlRecord oFXR = new FunnelbackXmlRecord();
+									oFXR.myfbx = fbx;
+									oFXR.li = oListItem;
+									oFXR.FunnelbackWriteXml();
+								}
+								
+							}
+							writer.WriteLine(@"</site>");
+						}
 						writer.WriteLine(@"</sharepoint>");
 					}
 				}
