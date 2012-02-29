@@ -29,6 +29,37 @@ namespace Sp_Ctx
 		public string[] UserFields { get; set; }
 	}
 	
+	public class FunnelbackXmlSite
+	{
+		public FunnelbackXmlConfig myfbx { get; set; }
+		public Web ww { get; set; }
+		
+		public void Process()
+		{
+			if (this.ww != null)
+			{
+				WebCollection oWebs = this.ww.Webs;
+				this.ww.Context.Load(oWebs);
+				this.ww.Context.ExecuteQuery();
+				foreach (Web sww in oWebs)
+				{
+					Console.WriteLine("Site: {0}", sww.Title);
+				    Console.ReadLine();
+					FunnelbackXmlSite fbxs = new FunnelbackXmlSite();
+					fbxs.myfbx = this.myfbx;
+					fbxs.ww = sww;
+					fbxs.Process();
+				}
+			}
+		}
+		
+		public void FunnelbackWriteXml()
+		{
+			
+		}
+	}
+	
+	
 	public class FunnelbackXmlRecord
 	{
 		public FunnelbackXmlConfig myfbx { get; set; }
@@ -106,6 +137,10 @@ namespace Sp_Ctx
 					{
 						Site oSite = ctx.Site;
 						WebCollection oWebs = oSite.RootWeb.Webs;
+						FunnelbackXmlSite fbxs = new FunnelbackXmlSite();
+						fbxs.ww = oSite.RootWeb;
+						fbxs.myfbx = fbx;
+						fbxs.Process();
 						ctx.Load(oWebs);
 						ctx.ExecuteQuery();
 						writer.WriteLine(@"<?xml version='1.0'?>");
