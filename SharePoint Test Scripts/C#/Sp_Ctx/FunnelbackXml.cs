@@ -25,6 +25,37 @@ namespace Sp_Ctx
 		public string targetSite { get; set; }
 	}
 	
+	public class FunnelbackXmlRecord
+	{
+		public FunnelbackXmlConfig myfbx { get; set; }
+		public ListItem li { get; set; }
+		
+		public void FunnelbackWriteXml()
+		{
+			if (this.li != null)
+			{
+				using (StreamWriter writer = new StreamWriter(this.myfbx.outputFolder + @"\" + this.li.Id.ToString() + ".xml"))
+				{
+					writer.WriteLine(@"<?xml version='1.0'?>");
+					writer.WriteLine(@"<FBSPRecord>");
+					writer.WriteLine("<id>{0}</id><title>{1}</title><hura>{2}</hura><type>{3}</type><null>{4}</null>",
+                    	                  this.li.Id,
+                    	                  this.li.DisplayName,
+                    	                  this.li.HasUniqueRoleAssignments,
+                    	                  this.li.FileSystemObjectType,
+                    	                  this.li.ServerObjectIsNull
+                    	                 );                 			
+					List<string> klist = new List<string>(this.li.FieldValues.Keys);
+					foreach (String klistkey in klist)
+					{
+						writer.WriteLine("<{0}><!CDATA[{1}]]></{0}>", klistkey.Replace(" ", "_"), this.li.FieldValues[klistkey]);
+					}
+					writer.WriteLine(@"</FBSPRecord>");
+				}				
+			}
+		}
+	}
+	
 	public class FunnelbackXmlExporter
 	{
 		[STAThread]
@@ -61,20 +92,10 @@ namespace Sp_Ctx
                     		ctx.ExecuteQuery();
                     		foreach (ListItem oListItem in collListItem)
                     		{
-                    			writer.WriteLine("<record>");
-                    			writer.WriteLine("<id>{0}</id><title>{1}</title><hura>{2}</hura><type>{3}</type><null>{4}</null>",
-                    	                  oListItem.Id,
-                    	                  oListItem.DisplayName,
-                    	                  oListItem.HasUniqueRoleAssignments,
-                    	                  oListItem.FileSystemObjectType,
-                    	                  oListItem.ServerObjectIsNull
-                    	                 );                 			
-                    			List<string> klist = new List<string>(oListItem.FieldValuesAsText.FieldValues.Keys);
-                    			foreach (String klistkey in klist)
-                    			{
-                    				writer.WriteLine("<{0}><!CDATA[{1}]]></{0}>", klistkey.Replace(" ", "_"), oListItem.FieldValuesAsText.FieldValues[klistkey]);
-                    			}
-                    			writer.WriteLine("</record>");
+                    			FunnelbackXmlRecord oFXR = new FunnelbackXmlRecord();
+                    			oFXR.myfbx = fbx;
+                    			oFXR.li = oListItem;
+                    			oFXR.FunnelbackWriteXml();
                     		}
                   		
                     }
