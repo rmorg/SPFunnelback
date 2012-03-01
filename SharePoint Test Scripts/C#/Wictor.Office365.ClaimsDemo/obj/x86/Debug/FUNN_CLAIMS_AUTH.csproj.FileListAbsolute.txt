@@ -4,3 +4,9 @@ C:\Documents and Settings\IETest\Desktop\Wictor.Office365.ClaimsDemo\Wictor.Offi
 C:\Documents and Settings\IETest\Desktop\Wictor.Office365.ClaimsDemo\Wictor.Office365.ClaimsDemo\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\IETest\Desktop\Wictor.Office365.ClaimsDemo\Wictor.Office365.ClaimsDemo\obj\x86\Debug\Wictor.Office365.ClaimsDemo.exe
 C:\Documents and Settings\IETest\Desktop\Wictor.Office365.ClaimsDemo\Wictor.Office365.ClaimsDemo\obj\x86\Debug\Wictor.Office365.ClaimsDemo.pdb
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\Wictor.Office365.ClaimsDemo.exe.config
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\obj\x86\Debug\Wictor.Office365.ClaimsDemo.exe
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\Wictor.Office365.ClaimsDemo.exe
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\Wictor.Office365.ClaimsDemo.pdb
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\obj\x86\Debug\Wictor.Office365.ClaimsDemo.pdb

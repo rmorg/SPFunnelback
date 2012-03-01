@@ -148,39 +148,43 @@ namespace Wictor.Office365.ClaimsDemo {
                 pair.Value);
             }
 
-            
+            string[] wanted_fields = { "" };
+           // wanted_fields=new string[] {""};
             if (fnb_config.ContainsKey("wanted_fields"))
             {
                 string wanted_fields_string = fnb_config["wanted_fields"];
-                string[] wanted_fields = wanted_fields_string.Split(',');
+                 wanted_fields = wanted_fields_string.Split(',');
 
             }
+            string[] cdata_fields = { "" };
+            if (fnb_config.ContainsKey("cdata_fields"))
+            {
+                string cdata_fields_string = fnb_config["cdata_fields"];
+                wanted_fields = cdata_fields_string.Split(',');
 
+            }
+            string[] lookup_fields = { "" };
+            if (fnb_config.ContainsKey("lookup_fields"))
+            {
+                string lookup_fields_string = fnb_config["lookup_fields"];
+                wanted_fields = lookup_fields_string.Split(',');
+
+            }
             
             string target_site = fnb_config["target_site"];
             string username = fnb_config["username"];
             string password = fnb_config["password"];
-            string outputFolder = fnb_config["output_folder"];
-           // string auth_method = fnb_config["auth_method"];
-            
-
-
-           
-            /*
-            string arg1 = "http://funnelback.sharepoint.com/TeamSite/";
-            string arg2 = "rmorgan@funnelback.onmicrosoft.com";
-            string arg3 = "Funnelback012";
-            */
+            string output_folder = fnb_config["output_folder"];
+            string auth_method = fnb_config["auth_method"];
+ 
             FunnelbackXmlConfig fbx = new FunnelbackXmlConfig();
-            //fbx.outputFolder = @"C:\Documents and Settings\IETest\Desktop\output_XML";
-            fbx.outputFolder = outputFolder;
+       
+            fbx.outputFolder = output_folder;
             fbx.targetSite = target_site;
-            //still to add to config file
-            //fbx.WantedFields = new string[] { "WikiField", "FileRef", "FileDirRef", "FileLeafRef", "Created", "Modified" };
             fbx.WantedFields = wanted_fields;
-           
-            fbx.CDataFields = new string[] { "WikiField" };
-            fbx.LookupFields = new string[] { "Author" };
+            fbx.CDataFields = cdata_fields;
+            fbx.LookupFields = lookup_fields;
+               
 
 
 
