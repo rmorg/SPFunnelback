@@ -3,3 +3,8 @@ C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the 
 C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\ClaimsAuth\obj\Debug\ClaimsAuth.csprojResolveAssemblyReference.cache
 C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\ClaimsAuth\obj\Debug\ClaimsAuth.dll
 C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\ClaimsAuth\obj\Debug\ClaimsAuth.pdb
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\ClaimsAuth\bin\Debug\ClaimsAuth.dll
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\ClaimsAuth\bin\Debug\ClaimsAuth.pdb
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\ClaimsAuth\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\ClaimsAuth\obj\Debug\ClaimsAuth.dll
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\ClaimsAuth\obj\Debug\ClaimsAuth.pdb

@@ -6,3 +6,6 @@ C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the 
 C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\obj\x86\Debug\Sp_Ctx.csprojResolveAssemblyReference.cache
 C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\obj\x86\Debug\Sp_Ctx.exe
 C:\Users\rpfmorg\Downloads\Remote Authentication in SharePoint Online Using the Client Object Model\C#\Sp_Ctx\obj\x86\Debug\Sp_Ctx.pdb
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Sp_Ctx\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Sp_Ctx\obj\x86\Debug\Sp_Ctx.exe
+C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Sp_Ctx\obj\x86\Debug\Sp_Ctx.pdb
