@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 using Microsoft.SharePoint.Client;
-
+using FUNN_SP_PROXIES;
 
 using SP = Microsoft.SharePoint.Client;
 
@@ -241,6 +243,14 @@ namespace Wictor.Office365.ClaimsDemo {
                                     oFXR.myfbx = fbx;
                                     oFXR.li = oListItem;
                                     oFXR.FunnelbackWriteXml();
+                                    
+                                    FunnelbackItem oFI = new FunnelbackItem(oListItem);
+                                    oFI.config = new FunnelbackConfig("funnelback.cfg");
+                                    
+                                    XmlSerializer ser = new XmlSerializer(typeof(FunnelbackItem));
+                                    XmlWriter tx = XmlWriter.Create(@"C:\Users\rpfmorg\output\testoutput.xml");
+                                    ser.Serialize(tx, oFI);
+                                    tx.Close();
                                 }
                             }
                             writer.WriteLine(@"</site>");

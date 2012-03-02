@@ -10,3 +10,11 @@ C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test
 C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\Wictor.Office365.ClaimsDemo.exe
 C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\Wictor.Office365.ClaimsDemo.pdb
 C:\Documents and Settings\IETest\Desktop\sharepoint\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\obj\x86\Debug\Wictor.Office365.ClaimsDemo.pdb
+C:\Users\rpfmorg\code\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\Wictor.Office365.ClaimsDemo.exe.config
+C:\Users\rpfmorg\code\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\Wictor.Office365.ClaimsDemo.exe
+C:\Users\rpfmorg\code\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\Wictor.Office365.ClaimsDemo.pdb
+C:\Users\rpfmorg\code\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\FUNN_SP_PROXIES.exe
+C:\Users\rpfmorg\code\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\bin\Debug\FUNN_SP_PROXIES.pdb
+C:\Users\rpfmorg\code\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\obj\x86\Debug\FUNN_CLAIMS_AUTH.csprojResolveAssemblyReference.cache
+C:\Users\rpfmorg\code\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\obj\x86\Debug\Wictor.Office365.ClaimsDemo.exe
+C:\Users\rpfmorg\code\SPFunnelback\SharePoint Test Scripts\C#\Wictor.Office365.ClaimsDemo\obj\x86\Debug\Wictor.Office365.ClaimsDemo.pdb

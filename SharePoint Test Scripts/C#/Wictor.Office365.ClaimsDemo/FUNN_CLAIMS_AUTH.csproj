@@ -61,6 +61,12 @@
     <None Include="app.config" />
     <None Include="funnelback.cfg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FUNN_SP_PROXIES\FUNN_SP_PROXIES.csproj">
+      <Project>{9FD79D3E-9F98-41C7-B8F8-A37359F2146A}</Project>
+      <Name>FUNN_SP_PROXIES</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
